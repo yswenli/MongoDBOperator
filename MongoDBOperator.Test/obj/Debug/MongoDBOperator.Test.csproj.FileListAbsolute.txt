@@ -1,0 +1,17 @@
+E:\百度云\Develop\MongoDB\old\MongoDBOperator\MongoDBOperator.Test\bin\Debug\MongoDBOperator.Test.exe.config
+E:\百度云\Develop\MongoDB\old\MongoDBOperator\MongoDBOperator.Test\bin\Debug\MongoDBOperator.Test.exe
+E:\百度云\Develop\MongoDB\old\MongoDBOperator\MongoDBOperator.Test\bin\Debug\MongoDBOperator.Test.pdb
+E:\百度云\Develop\MongoDB\old\MongoDBOperator\MongoDBOperator.Test\bin\Debug\MongoDB.Bson.dll
+E:\百度云\Develop\MongoDB\old\MongoDBOperator\MongoDBOperator.Test\bin\Debug\MongoDBOperator.dll
+E:\百度云\Develop\MongoDB\old\MongoDBOperator\MongoDBOperator.Test\bin\Debug\MongoDB.Driver.Legacy.dll
+E:\百度云\Develop\MongoDB\old\MongoDBOperator\MongoDBOperator.Test\bin\Debug\MongoDB.Driver.dll
+E:\百度云\Develop\MongoDB\old\MongoDBOperator\MongoDBOperator.Test\bin\Debug\MongoDB.Driver.Core.dll
+E:\百度云\Develop\MongoDB\old\MongoDBOperator\MongoDBOperator.Test\bin\Debug\MongoDBOperator.pdb
+E:\百度云\Develop\MongoDB\old\MongoDBOperator\MongoDBOperator.Test\bin\Debug\MongoDB.Bson.xml
+E:\百度云\Develop\MongoDB\old\MongoDBOperator\MongoDBOperator.Test\bin\Debug\MongoDB.Driver.Legacy.xml
+E:\百度云\Develop\MongoDB\old\MongoDBOperator\MongoDBOperator.Test\bin\Debug\MongoDB.Driver.xml
+E:\百度云\Develop\MongoDB\old\MongoDBOperator\MongoDBOperator.Test\bin\Debug\MongoDB.Driver.Core.xml
+E:\百度云\Develop\MongoDB\old\MongoDBOperator\MongoDBOperator.Test\obj\Debug\MongoDBOperator.Test.csprojResolveAssemblyReference.cache
+E:\百度云\Develop\MongoDB\old\MongoDBOperator\MongoDBOperator.Test\obj\Debug\MongoDBOperator.Test.exe
+E:\百度云\Develop\MongoDB\old\MongoDBOperator\MongoDBOperator.Test\obj\Debug\MongoDBOperator.Test.pdb
+E:\百度云\Develop\MongoDB\old\MongoDBOperator\MongoDBOperator.Test\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
