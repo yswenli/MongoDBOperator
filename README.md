@@ -1,6 +1,10 @@
 # MongoDBOperator
 this is a mongodb operation libs
 
+测试效果图：
+
+<img src="https://github.com/yswenli/MongoDBOperator/blob/master/MongoDBOperator.Test/2017-07-13_170957.png?raw=true" alt="wenli.mongodboperator"/>
+
 
 测试代码如下：
 
