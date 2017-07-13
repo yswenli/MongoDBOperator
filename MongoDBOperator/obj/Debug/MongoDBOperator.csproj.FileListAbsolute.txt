@@ -12,3 +12,4 @@ E:\百度云\Develop\MongoDB\old\MongoDBOperator\MongoDBOperator\bin\Debug\Mongo
 E:\百度云\Develop\MongoDB\old\MongoDBOperator\MongoDBOperator\bin\Debug\MongoDB.Driver.Legacy.xml
 E:\百度云\Develop\MongoDB\old\MongoDBOperator\MongoDBOperator\obj\Debug\MongoDBOperator.dll
 E:\百度云\Develop\MongoDB\old\MongoDBOperator\MongoDBOperator\obj\Debug\MongoDBOperator.pdb
+E:\百度云\Develop\MongoDB\old\MongoDBOperator\MongoDBOperator\obj\Debug\MongoDBOperator.csprojResolveAssemblyReference.cache
