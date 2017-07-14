@@ -24,7 +24,7 @@ using MongoDBOperator.Model;
 
 namespace MongoDBOperator.Test.Model
 {
-    [CollectionName("CustomersTest")]
+    [CollectionName("Account")]
     public class Account : MongoEntity
     {
         public Account()

@@ -19,6 +19,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using MongoDB.Driver;
 using MongoDBOperator.Interface;
 using MongoDBOperator.Model;
@@ -39,11 +40,55 @@ namespace MongoDBOperator.Extention
 
         private static MongoDatabase GetDatabaseFromUrl(MongoUrl url)
         {
-            var client = new MongoClient(url);
-            var server = client.GetServer();
-            return server.GetDatabase(url.DatabaseName);
+            return new MongoClient(url).GetServer().GetDatabase(url.DatabaseName);            
         }
 
+        /// <summary>  
+        /// 取得数据库集群连接  
+        /// 
+        /// MongoServerAddress
+        /// MongReplicaSetName
+        /// 
+        /// </summary>  
+        /// <returns>数据库连接字符串</returns>  
+        private static MongoDatabase GetDatabaseFromAppSettings(string databaseName)
+        {
+            List<MongoServerAddress> servers = new List<MongoServerAddress>();
+            string reg = @"^(?'server'\d{1,}.\d{1,}.\d{1,}.\d{1,}):(?'port'\d{1,})$";
+            string[] ServerList = ConfigurationManager.AppSettings["MongoServerAddress"].Trim().Split('|');
+            foreach (string server in ServerList)
+            {
+                MatchCollection mc = Regex.Matches(server, reg);
+                if (mc != null && mc.Count > 0)
+                    servers.Add(new MongoServerAddress(mc[0].Groups["server"].ToString(), Convert.ToInt32(mc[0].Groups["port"].ToString())));
+            }
+
+            if (servers == null || servers.Count < 1)
+                return null;
+
+            MongoClientSettings set = new MongoClientSettings();
+
+            set.Servers = servers;
+
+            set.ReplicaSetName = ConfigurationManager.AppSettings["MongReplicaSetName"].Trim();//设置副本集名称  
+
+            int TimeOut = ConfigurationManager.AppSettings["TimeOut"].ParseInt();//设置副本集名称  
+
+            set.ConnectTimeout = new TimeSpan(0, 0, 0, TimeOut, 0);//设置超时时间为5秒  
+
+            set.ReadPreference = new ReadPreference(ReadPreferenceMode.SecondaryPreferred);
+
+            MongoClient client = new MongoClient(set);
+
+            return client.GetServer().GetDatabase(databaseName);
+        }
+
+
+        public static MongoCollection<T> GetCollectionFromCluster<T>(string databaseName) 
+            where T : IMongoEntity<U>
+        {
+            return GetDatabaseFromAppSettings(databaseName).GetCollection<T>(GetCollectionName<T>());
+        }
 
         public static MongoCollection<T> GetCollectionFromConnectionString<T>(string connectionString)
             where T : IMongoEntity<U>
@@ -136,6 +181,22 @@ namespace MongoDBOperator.Extention
             }
 
             return collectionname;
+        }
+
+      
+    }
+
+    internal static class Extentions
+    {
+        public static int ParseInt(this string str)
+        {
+            int result = 0;
+
+            if (!int.TryParse(str, out result))
+            {
+                result = 0;
+            }
+            return result;
         }
     }
 }
