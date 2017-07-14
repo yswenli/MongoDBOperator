@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CollectionNameAttribute.cs" />
+    <Compile Include="Extention\EntityExtention.cs" />
     <Compile Include="Extention\Extentions.cs" />
     <Compile Include="Interface\IMongoEntity.cs" />
     <Compile Include="Interface\IOperator.cs" />

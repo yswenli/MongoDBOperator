@@ -40,7 +40,7 @@ namespace MongoDBOperator.Extention
 
         private static MongoDatabase GetDatabaseFromUrl(MongoUrl url)
         {
-            return new MongoClient(url).GetServer().GetDatabase(url.DatabaseName);            
+            return new MongoClient(url).GetServer().GetDatabase(url.DatabaseName);
         }
 
         /// <summary>  
@@ -84,7 +84,7 @@ namespace MongoDBOperator.Extention
         }
 
 
-        public static MongoCollection<T> GetCollectionFromCluster<T>(string databaseName) 
+        public static MongoCollection<T> GetCollectionFromCluster<T>(string databaseName)
             where T : IMongoEntity<U>
         {
             return GetDatabaseFromAppSettings(databaseName).GetCollection<T>(GetCollectionName<T>());
@@ -183,20 +183,6 @@ namespace MongoDBOperator.Extention
             return collectionname;
         }
 
-      
-    }
 
-    internal static class Extentions
-    {
-        public static int ParseInt(this string str)
-        {
-            int result = 0;
-
-            if (!int.TryParse(str, out result))
-            {
-                result = 0;
-            }
-            return result;
-        }
     }
 }
